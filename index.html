@@ -4,231 +4,725 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Automation Developer | AI & n8n</title>
-<meta name="description" content="Разработка AI-ботов, автоматизаций n8n и интеграций для бизнеса.">
+<meta name="description" content="AI Automation Developer. Разработка AI-ботов, Telegram-ассистентов и автоматизация бизнес-процессов с помощью n8n.">
+<meta name="theme-color" content="#09090f">
+<title>AI Automation Developer | n8n & AI</title>
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:#09090f;color:#f4f3fa;font-family:Arial,sans-serif;line-height:1.6}
-.container{width:min(1100px,90%);margin:auto}
-header{padding:24px 0;border-bottom:1px solid #242333}
-nav{display:flex;justify-content:space-between;align-items:center;gap:20px}
-.logo{font-size:21px;font-weight:800}
-.logo span{color:#9b75ff}
-nav a{color:#aaa;text-decoration:none;margin-left:22px;font-size:14px}
-nav a:hover{color:#ae91ff}
-.hero{padding:115px 0 100px;text-align:center;background:radial-gradient(ellipse at 50% 0%,#33205b 0%,#09090f 65%)}
-.tag{display:inline-block;border:1px solid #6444a5;border-radius:30px;padding:7px 17px;color:#c5aaff;font-size:13px;margin-bottom:25px}
-h1{font-size:clamp(38px,7vw,70px);line-height:1.1;letter-spacing:-2px}
-.gradient{background:linear-gradient(90deg,#a987ff,#65c9ff);-webkit-background-clip:text;color:transparent}
-.hero p{color:#aaa;margin:25px auto;max-width:620px;font-size:17px}
-.btn{display:inline-block;background:#8255e9;color:white;text-decoration:none;padding:14px 25px;border-radius:9px;font-weight:bold;margin:8px;transition:.2s}
-.btn:hover{background:#986fff;transform:translateY(-2px)}
-.btn.secondary{background:#191725;border:1px solid #39334d}
-section{padding:85px 0}
-.section-title{text-align:center;font-size:34px;margin-bottom:12px}
-.section-desc{text-align:center;color:#92909f;margin-bottom:40px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.card{background:#12111b;border:1px solid #292637;border-radius:15px;padding:27px;transition:.25s}
-.card:hover{border-color:#8057d7;transform:translateY(-5px)}
-.card .icon{font-size:30px;margin-bottom:15px}
-.card h3{margin-bottom:10px;font-size:20px}
-.card p{color:#a6a3b2;font-size:14px}
-.pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
-.pill{background:#211a32;color:#c6adff;border-radius:20px;padding:5px 11px;font-size:12px}
-.about{max-width:750px;margin:auto;text-align:center;color:#aaa}
-.about strong{color:#eee}
-.steps{max-width:700px;margin:auto}
-.step{padding:20px;border-left:2px solid #8057d7;margin-bottom:15px;background:#12111b;border-radius:0 12px 12px 0}
-.step h3{margin-bottom:5px}
-.step p{color:#aaa;font-size:14px}
-.contact{text-align:center;background:radial-gradient(ellipse at 50% 100%,#30204d,#09090f 70%)}
-.contact p{color:#aaa;margin:15px auto 25px}
-footer{border-top:1px solid #242333;padding:25px;text-align:center;color:#777;font-size:13px}
-@media(max-width:600px){nav{flex-direction:column}nav a{margin:0 8px}.hero{padding:85px 0}section{padding:65px 0}}
+:root {
+  --bg: #09090f;
+  --surface: #12111b;
+  --surface2: #191725;
+  --border: #292637;
+  --text: #f4f3fa;
+  --muted: #aaa7b8;
+  --purple: #9b75ff;
+  --blue: #65c9ff;
+  --gradient: linear-gradient(100deg,#a987ff,#65c9ff);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial,sans-serif;
+  line-height:1.65;
+}
+a { color:inherit; }
+.container { width:min(1120px,90%); margin:auto; }
+
+header {
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(9,9,15,.92);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--border);
+}
+nav {
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.logo {
+  font-size:20px;
+  font-weight:800;
+  white-space:nowrap;
+}
+.logo span { color:var(--purple); }
+.nav-right {
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+.nav-links {
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+.nav-links a {
+  color:var(--muted);
+  text-decoration:none;
+  font-size:14px;
+  transition:.2s;
+}
+.nav-links a:hover { color:var(--purple); }
+
+.lang-btn {
+  border:1px solid var(--border);
+  background:var(--surface2);
+  color:white;
+  padding:8px 13px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+}
+.lang-btn:hover { border-color:var(--purple); }
+
+.hero {
+  padding:125px 0 110px;
+  text-align:center;
+  background:radial-gradient(ellipse at 50% 0%,#33205b 0%,#09090f 67%);
+}
+.tag {
+  display:inline-block;
+  border:1px solid #6444a5;
+  border-radius:30px;
+  padding:7px 17px;
+  color:#c5aaff;
+  font-size:12px;
+  letter-spacing:1px;
+  margin-bottom:25px;
+}
+h1 {
+  font-size:clamp(39px,7vw,72px);
+  line-height:1.12;
+  letter-spacing:-2px;
+}
+.gradient {
+  background:var(--gradient);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.hero p {
+  color:var(--muted);
+  max-width:680px;
+  margin:25px auto;
+  font-size:17px;
+}
+.hero-note {
+  color:#c6adff;
+  font-size:13px;
+  margin-top:20px;
+}
+.btn {
+  display:inline-block;
+  background:#8255e9;
+  color:white;
+  text-decoration:none;
+  padding:13px 23px;
+  border-radius:9px;
+  font-weight:bold;
+  margin:7px;
+  transition:.25s;
+}
+.btn:hover {
+  background:#986fff;
+  transform:translateY(-3px);
+  box-shadow:0 8px 30px #8255e944;
+}
+.btn.secondary {
+  background:var(--surface2);
+  border:1px solid #39334d;
+}
+.btn.secondary:hover { border-color:var(--purple); }
+
+section { padding:85px 0; }
+.section-title {
+  text-align:center;
+  font-size:34px;
+  margin-bottom:12px;
+}
+.section-desc {
+  text-align:center;
+  color:#92909f;
+  margin-bottom:42px;
+}
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+.card {
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:15px;
+  padding:27px;
+  transition:.25s;
+}
+.card:hover {
+  border-color:#8057d7;
+  transform:translateY(-5px);
+}
+.icon { font-size:30px; margin-bottom:15px; }
+.card h3 { font-size:20px; margin-bottom:12px; }
+.card p { color:var(--muted); font-size:14px; }
+.card p + p { margin-top:15px; }
+.card strong { color:#eee; }
+.pills {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:18px;
+}
+.pill {
+  background:#211a32;
+  color:#c6adff;
+  border-radius:20px;
+  padding:5px 11px;
+  font-size:12px;
+}
+.project-type {
+  display:inline-block;
+  color:#c6adff;
+  background:#211a32;
+  border:1px solid #49356d;
+  padding:4px 10px;
+  border-radius:20px;
+  font-size:11px;
+  margin-bottom:15px;
+}
+.project-list {
+  list-style:none;
+  margin-top:10px;
+}
+.project-list li {
+  color:var(--muted);
+  font-size:14px;
+  margin:5px 0;
+}
+.project-list li::before {
+  content:"✓";
+  color:var(--purple);
+  margin-right:9px;
+}
+.about {
+  max-width:780px;
+  margin:auto;
+  text-align:center;
+  color:var(--muted);
+  font-size:16px;
+}
+.about strong { color:#eee; }
+
+.skill-card {
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:23px;
+  transition:.2s;
+}
+.skill-card:hover { border-color:var(--purple); }
+.skill-card h3 { margin-bottom:7px; }
+.skill-card p { color:var(--muted); font-size:14px; }
+
+.advantages {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:17px;
+}
+.advantage {
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:13px;
+  padding:23px;
+}
+.advantage .icon { font-size:25px; }
+.advantage h3 { margin-bottom:8px; font-size:18px; }
+.advantage p { color:var(--muted); font-size:14px; }
+
+.steps { max-width:760px; margin:auto; }
+.step {
+  padding:21px;
+  border-left:2px solid #8057d7;
+  margin-bottom:15px;
+  background:var(--surface);
+  border-radius:0 12px 12px 0;
+}
+.step h3 { margin-bottom:5px; }
+.step p { color:var(--muted); font-size:14px; }
+
+.price-box {
+  max-width:760px;
+  margin:auto;
+  padding:35px;
+  text-align:center;
+  background:linear-gradient(135deg,#171326,#11111a);
+  border:1px solid #48366d;
+  border-radius:16px;
+}
+.price-box h3 { font-size:23px; margin-bottom:12px; }
+.price-box p { color:var(--muted); }
+
+.contact {
+  text-align:center;
+  background:radial-gradient(ellipse at 50% 100%,#30204d,#09090f 70%);
+}
+.contact p {
+  color:var(--muted);
+  margin:12px auto 25px;
+}
+.contact-links {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:25px;
+}
+.contact-link {
+  display:inline-block;
+  padding:13px 20px;
+  border:1px solid var(--border);
+  border-radius:9px;
+  background:var(--surface);
+  color:white;
+  text-decoration:none;
+  transition:.2s;
+}
+.contact-link:hover {
+  border-color:var(--purple);
+  transform:translateY(-3px);
+}
+footer {
+  border-top:1px solid var(--border);
+  padding:25px;
+  text-align:center;
+  color:#777;
+  font-size:13px;
+}
+
+.reveal {
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity .65s ease,transform .65s ease;
+}
+.reveal.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media(max-width:760px) {
+  nav {
+    flex-direction:column;
+    padding:16px 0;
+  }
+  .nav-right {
+    width:100%;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .nav-links {
+    gap:13px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+  .nav-links a { font-size:12px; }
+  .hero { padding:85px 0; }
+  section { padding:65px 0; }
+  .section-title { font-size:29px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    scroll-behavior:auto !important;
+    transition:none !important;
+  }
+  .reveal { opacity:1; transform:none; }
+}
 </style>
 </head>
+
 <body>
+
 <header>
-<div class="container">
-<nav>
-<div class="logo">Automation<span>.</span>Developer</div>
-<div>
-<a href="#services">Услуги</a>
-<a href="#projects">Проекты</a>
-<a href="#about">Обо мне</a>
-<a href="#contact">Контакты</a>
-</div>
-</nav>
-</div>
+  <div class="container">
+    <nav>
+      <div class="logo">AI <span>Automation</span> Developer</div>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#services" data-ru="Услуги" data-en="Services">Услуги</a>
+          <a href="#projects" data-ru="Проекты" data-en="Projects">Проекты</a>
+          <a href="#about" data-ru="Обо мне" data-en="About">Обо мне</a>
+          <a href="#skills" data-ru="Навыки" data-en="Skills">Навыки</a>
+          <a href="#contact" data-ru="Контакты" data-en="Contact">Контакты</a>
+        </div>
+        <button class="lang-btn" id="langBtn" type="button">EN</button>
+      </div>
+    </nav>
+  </div>
 </header>
 
 <main>
+
 <section class="hero">
-<div class="container">
-<div class="tag">AI AUTOMATION · N8N · CHATBOTS</div>
-<h1>Автоматизирую бизнес<br><span class="gradient">с помощью AI</span></h1>
-<p>Разрабатываю интеллектуальных чат-ботов, AI-агентов и автоматизации, которые помогают бизнесу экономить время и получать больше результатов.</p>
-<a class="btn" href="#contact">Обсудить проект →</a>
-<a class="btn secondary" href="#projects">Мои проекты</a>
-</div>
+  <div class="container">
+    <div class="tag">AI AUTOMATION · N8N · CHATBOTS</div>
+    <h1>
+      <span data-ru="Автоматизирую бизнес" data-en="I automate business">Автоматизирую бизнес</span><br>
+      <span class="gradient" data-ru="с помощью AI" data-en="with AI">с помощью AI</span>
+    </h1>
+    <p data-ru="Разрабатываю интеллектуальных чат-ботов, AI-ассистентов и автоматизации, которые помогают бизнесу экономить время, обрабатывать заявки и упрощать повседневные процессы."
+       data-en="I build intelligent chatbots, AI assistants and automations that help businesses save time, process leads and simplify everyday workflows.">
+      Разрабатываю интеллектуальных чат-ботов, AI-ассистентов и автоматизации, которые помогают бизнесу экономить время, обрабатывать заявки и упрощать повседневные процессы.
+    </p>
+    <a class="btn" href="#contact" data-ru="Обсудить проект →" data-en="Discuss a project →">Обсудить проект →</a>
+    <a class="btn secondary" href="#projects" data-ru="Мои проекты" data-en="My projects">Мои проекты</a>
+    <div class="hero-note" data-ru="Удалённая работа с клиентами по всему миру"
+         data-en="Working remotely with clients worldwide">
+      Удалённая работа с клиентами по всему миру
+    </div>
+  </div>
 </section>
 
 <section id="services">
-<div class="container">
-<h2 class="section-title">Что я делаю</h2>
-<p class="section-desc">Инструменты для автоматизации бизнес-процессов</p>
-<div class="grid">
-<div class="card"><div class="icon">🤖</div><h3>AI-чат-боты</h3><p>Создание Telegram-ботов с искусственным интеллектом для общения с клиентами и обработки запросов.</p></div>
-<div class="card"><div class="icon">⚙️</div><h3>Автоматизация n8n</h3><p>Настройка рабочих процессов, которые соединяют сервисы и выполняют рутинные задачи автоматически.</p></div>
-<div class="card"><div class="icon">📊</div><h3>Работа с данными</h3><p>Интеграции Google Sheets и Airtable, сбор заявок, обработка данных и аналитика.</p></div>
-</div>
-</div>
-</section>
-
-<section id="projects">
-<div class="container">
-<h2 class="section-title">Мои проекты</h2>
-<p class="section-desc">Примеры решений и автоматизаций</p>
-<div class="grid">
-<div class="card">
-<div class="icon">💬</div>
-<h3>Telegram AI Assistant</h3>
-<p>
-  AI-ассистент в Telegram для автоматического
-  общения с клиентами. Отвечает на вопросы,
-  помогает с выбором товаров и предоставляет
-  информацию на основе заданных инструкций.
-</p>
-<p style="margin-top:15px">
-  <strong>Что реализовано:</strong><br>
-  • Приём сообщений от пользователей<br>
-  • Обработка запросов с помощью AI<br>
-  • Формирование ответов клиентам<br>
-  • Интеграция AI-модели с Telegram
-</p>
-<div class="pills">
-  <span class="pill">n8n</span>
-  <span class="pill">Telegram</span>
-  <span class="pill">AI</span>
-</div>
-<div class="pills">
-  <span class="pill">Учебный проект</span>
-</div>
-</div>
-<div class="card">
-<div class="icon">📥</div>
-<h3>Lead Automation</h3>
-<p>
-  Автоматизированная система сбора клиентских
-  заявок. При получении POST-запроса через Webhook
-  данные обрабатываются и передаются в Google Sheets.
-</p>
-<p style="margin-top:15px">
-  <strong>Что реализовано:</strong><br>
-  • Приём заявок через Webhook<br>
-  • Подготовка и обработка данных<br>
-  • Автоматическая запись в таблицу
-</p>
-<div class="pills">
-  <span class="pill">n8n</span>
-  <span class="pill">Webhook</span>
-  <span class="pill">Google Sheets</span>
-</div>
-<div class="pills">
-  <span class="pill">Учебный проект</span>
-</div>
-</div>
-<div class="card">
-  <div class="icon">📈</div>
-  <h3>Manager Analytics</h3>
-  <p>
-    Система аналитики для оценки эффективности менеджеров.
-    Обрабатывает данные о заявках и заказах, рассчитывает
-    показатели продаж и конверсию.
-  </p>
-  <p style="margin-top:15px">
-    <strong>Что реализовано:</strong><br>
-    • Обработка данных о заявках и заказах<br>
-    • Расчёт общей суммы продаж<br>
-    • Расчёт конверсии по каждому менеджеру<br>
-    • Сравнение результатов менеджеров
-  </p>
-  <div class="pills">
-    <span class="pill">n8n</span>
-    <span class="pill">Airtable</span>
-    <span class="pill">Analytics</span>
-  </div>
-  <div class="pills">
-    <span class="pill">Учебный проект</span>
-  </div>
-</div>
-</div>
-</div>
-</section>
-
-<section id="about">
-<div class="container">
-<h2 class="section-title">Обо мне</h2>
-<p class="about">Я <strong>Automation Developer</strong>. Занимаюсь разработкой чат-ботов, AI-агентов и автоматизацией бизнес-процессов. Моя задача — находить процессы, которые можно упростить, и создавать для них эффективные технические решения.</p>
-</div>
-</section>
-<section id="skills">
   <div class="container">
-    <h2 class="section-title">Мои навыки</h2>
-    <p class="section-desc">Инструменты и технологии, с которыми я работаю</p>
-    <div class="steps">
-      <div class="step">
-        <h3>n8n</h3>
-        <p>Создание автоматизаций и workflow для бизнеса.</p>
+    <h2 class="section-title" data-ru="Мои услуги" data-en="My services">Мои услуги</h2>
+    <p class="section-desc" data-ru="Автоматизация задач, которые отнимают время у вашего бизнеса"
+       data-en="Automating tasks that take time away from your business">
+      Автоматизация задач, которые отнимают время у вашего бизнеса
+    </p>
+    <div class="grid">
+      <div class="card reveal">
+        <div class="icon">🤖</div>
+        <h3 data-ru="AI-чат-боты" data-en="AI chatbots">AI-чат-боты</h3>
+        <p data-ru="Telegram-боты и AI-ассистенты для общения с клиентами, ответов на вопросы и обработки запросов."
+           data-en="Telegram bots and AI assistants for customer communication, answering questions and handling requests.">
+          Telegram-боты и AI-ассистенты для общения с клиентами, ответов на вопросы и обработки запросов.
+        </p>
       </div>
-      <div class="step">
-        <h3>Telegram Bots</h3>
-        <p>Разработка чат-ботов и интеграция AI-ассистентов.</p>
+      <div class="card reveal">
+        <div class="icon">⚙️</div>
+        <h3 data-ru="Автоматизация через n8n" data-en="n8n automation">Автоматизация через n8n</h3>
+        <p data-ru="Создание workflow, которые соединяют сервисы и выполняют повторяющиеся задачи автоматически."
+           data-en="Building workflows that connect services and automate repetitive tasks.">
+          Создание workflow, которые соединяют сервисы и выполняют повторяющиеся задачи автоматически.
+        </p>
       </div>
-      <div class="step">
-        <h3>AI / LLM</h3>
-        <p>Подключение языковых моделей и настройка AI-агентов.</p>
+      <div class="card reveal">
+        <div class="icon">📥</div>
+        <h3 data-ru="Сбор заявок и заказов" data-en="Lead and order processing">Сбор заявок и заказов</h3>
+        <p data-ru="Приём обращений, обработка данных, уведомления и передача заявок в нужные сервисы."
+           data-en="Receiving inquiries, processing data, sending notifications and forwarding leads to the right services.">
+          Приём обращений, обработка данных, уведомления и передача заявок в нужные сервисы.
+        </p>
       </div>
-      <div class="step">
-        <h3>Google Sheets</h3>
-        <p>Автоматическая обработка и запись данных в таблицы.</p>
+      <div class="card reveal">
+        <div class="icon">🔗</div>
+        <h3 data-ru="Интеграции сервисов" data-en="Service integrations">Интеграции сервисов</h3>
+        <p data-ru="Связь Google Sheets, Airtable, CRM и других платформ через API и Webhook."
+           data-en="Connecting Google Sheets, Airtable, CRMs and other platforms using APIs and webhooks.">
+          Связь Google Sheets, Airtable, CRM и других платформ через API и Webhook.
+        </p>
       </div>
-      <div class="step">
-        <h3>Airtable</h3>
-        <p>Работа с базами данных и автоматизация записей.</p>
+      <div class="card reveal">
+        <div class="icon">👥</div>
+        <h3 data-ru="Распределение заявок" data-en="Lead distribution">Распределение заявок</h3>
+        <p data-ru="Автоматическое распределение обращений между менеджерами по заданным правилам."
+           data-en="Automatically assigning incoming leads to managers based on defined rules.">
+          Автоматическое распределение обращений между менеджерами по заданным правилам.
+        </p>
       </div>
-      <div class="step">
-        <h3>API / Webhooks</h3>
-        <p>Связь между сервисами и обмен данными.</p>
+      <div class="card reveal">
+        <div class="icon">🏢</div>
+        <h3 data-ru="Автоматизация бизнеса" data-en="Business automation">Автоматизация бизнеса</h3>
+        <p data-ru="Настройка процессов для магазинов, онлайн-школ и компаний с учётом их задач."
+           data-en="Workflow automation for shops, online schools and companies based on their needs.">
+          Настройка процессов для магазинов, онлайн-школ и компаний с учётом их задач.
+        </p>
       </div>
     </div>
   </div>
 </section>
-<section>
-<div class="container">
-<h2 class="section-title">Как я работаю</h2>
-<p class="section-desc">От идеи до готовой автоматизации</p>
-<div class="steps">
-<div class="step"><h3>01. Обсуждение задачи</h3><p>Изучаю потребности бизнеса и определяю, что можно автоматизировать.</p></div>
-<div class="step"><h3>02. Разработка</h3><p>Создаю бота или workflow, настраиваю интеграции и логику.</p></div>
-<div class="step"><h3>03. Тестирование</h3><p>Проверяю работу автоматизации и исправляю ошибки.</p></div>
-<div class="step"><h3>04. Запуск</h3><p>Передаю готовое решение и помогаю с настройкой.</p></div>
-</div>
-</div>
+
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title" data-ru="Мои проекты" data-en="My projects">Мои проекты</h2>
+    <p class="section-desc" data-ru="Практические решения, созданные в рамках обучения и самостоятельной практики"
+       data-en="Practical solutions built during training and independent practice">
+      Практические решения, созданные в рамках обучения и самостоятельной практики
+    </p>
+
+    <div class="grid">
+
+      <div class="card reveal">
+        <div class="icon">💬</div>
+        <span class="project-type" data-ru="Учебный проект" data-en="Learning project">Учебный проект</span>
+        <h3>Telegram AI Assistant</h3>
+        <p data-ru="AI-ассистент в Telegram для автоматического общения с клиентами. Помогает отвечать на вопросы и предоставлять информацию на основе заданных инструкций."
+           data-en="A Telegram AI assistant for automated customer communication. It helps answer questions and provide information based on configured instructions.">
+          AI-ассистент в Telegram для автоматического общения с клиентами. Помогает отвечать на вопросы и предоставлять информацию на основе заданных инструкций.
+        </p>
+        <p><strong data-ru="Что реализовано:" data-en="Implemented:">Что реализовано:</strong></p>
+        <ul class="project-list">
+          <li data-ru="Приём сообщений от пользователей" data-en="Receiving user messages">Приём сообщений от пользователей</li>
+          <li data-ru="Обработка запросов с помощью AI" data-en="Processing requests with AI">Обработка запросов с помощью AI</li>
+          <li data-ru="Формирование ответов клиентам" data-en="Generating customer responses">Формирование ответов клиентам</li>
+          <li data-ru="Интеграция AI-модели с Telegram" data-en="Integrating an AI model with Telegram">Интеграция AI-модели с Telegram</li>
+        </ul>
+        <div class="pills">
+          <span class="pill">n8n</span><span class="pill">Telegram</span><span class="pill">AI</span>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="icon">📥</div>
+        <span class="project-type" data-ru="Учебный проект" data-en="Learning project">Учебный проект</span>
+        <h3>Lead Automation</h3>
+        <p data-ru="Система сбора клиентских заявок. При получении POST-запроса через Webhook данные обрабатываются и передаются в Google Sheets."
+           data-en="A lead collection system. When a POST request arrives through a webhook, the data is processed and sent to Google Sheets.">
+          Система сбора клиентских заявок. При получении POST-запроса через Webhook данные обрабатываются и передаются в Google Sheets.
+        </p>
+        <p><strong data-ru="Что реализовано:" data-en="Implemented:">Что реализовано:</strong></p>
+        <ul class="project-list">
+          <li data-ru="Приём заявок через Webhook" data-en="Receiving leads through a webhook">Приём заявок через Webhook</li>
+          <li data-ru="Подготовка и обработка данных" data-en="Preparing and processing data">Подготовка и обработка данных</li>
+          <li data-ru="Автоматическая запись в таблицу" data-en="Automatically saving data to a spreadsheet">Автоматическая запись в таблицу</li>
+        </ul>
+        <div class="pills">
+          <span class="pill">n8n</span><span class="pill">Webhook</span><span class="pill">Google Sheets</span>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="icon">📈</div>
+        <span class="project-type" data-ru="Учебный проект" data-en="Learning project">Учебный проект</span>
+        <h3>Manager Analytics</h3>
+        <p data-ru="Учебная система аналитики для оценки эффективности менеджеров на основе данных о заявках и заказах."
+           data-en="A learning project for evaluating manager performance using lead and order data.">
+          Учебная система аналитики для оценки эффективности менеджеров на основе данных о заявках и заказах.
+        </p>
+        <p><strong data-ru="Что реализовано:" data-en="Implemented:">Что реализовано:</strong></p>
+        <ul class="project-list">
+          <li data-ru="Обработка данных о заявках и заказах" data-en="Processing leads and orders">Обработка данных о заявках и заказах</li>
+          <li data-ru="Расчёт общей суммы продаж" data-en="Calculating total sales">Расчёт общей суммы продаж</li>
+          <li data-ru="Расчёт конверсии по менеджерам" data-en="Calculating manager conversion rates">Расчёт конверсии по менеджерам</li>
+          <li data-ru="Сравнение результатов менеджеров" data-en="Comparing manager results">Сравнение результатов менеджеров</li>
+        </ul>
+        <div class="pills">
+          <span class="pill">n8n</span><span class="pill">Airtable</span><span class="pill">Analytics</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <h2 class="section-title" data-ru="Обо мне" data-en="About me">Обо мне</h2>
+    <p class="about"
+       data-ru="Я — AI Automation Developer. Изучаю и применяю инструменты автоматизации бизнес-процессов, разрабатываю чат-ботов и AI-ассистентов. Мне интересно находить задачи, которые можно упростить с помощью технологий, и создавать для них понятные и практичные решения. Открыт к удалённому сотрудничеству с клиентами по всему миру."
+       data-en="I am an AI Automation Developer. I work with business automation tools, build chatbots and AI assistants. I enjoy finding tasks that can be simplified with technology and creating practical solutions. I am open to remote collaboration with clients worldwide.">
+      Я — AI Automation Developer. Изучаю и применяю инструменты автоматизации бизнес-процессов, разрабатываю чат-ботов и AI-ассистентов. Мне интересно находить задачи, которые можно упростить с помощью технологий, и создавать для них понятные и практичные решения. Открыт к удалённому сотрудничеству с клиентами по всему миру.
+    </p>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <h2 class="section-title" data-ru="Мои навыки" data-en="My skills">Мои навыки</h2>
+    <p class="section-desc" data-ru="Инструменты и технологии, с которыми я работаю"
+       data-en="Tools and technologies I work with">
+      Инструменты и технологии, с которыми я работаю
+    </p>
+    <div class="grid">
+      <div class="skill-card reveal">
+        <h3>n8n</h3>
+        <p data-ru="Создание автоматизаций и workflow." data-en="Building automations and workflows.">Создание автоматизаций и workflow.</p>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Telegram Bots</h3>
+        <p data-ru="Создание и настройка Telegram-ботов." data-en="Creating and configuring Telegram bots.">Создание и настройка Telegram-ботов.</p>
+      </div>
+      <div class="skill-card reveal">
+        <h3>AI / LLM</h3>
+        <p data-ru="Подключение языковых моделей и AI-ассистентов." data-en="Integrating language models and AI assistants.">Подключение языковых моделей и AI-ассистентов.</p>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Google Sheets</h3>
+        <p data-ru="Автоматическая обработка и запись данных." data-en="Automated data processing and storage.">Автоматическая обработка и запись данных.</p>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Airtable</h3>
+        <p data-ru="Работа с базами данных и записями." data-en="Working with databases and records.">Работа с базами данных и записями.</p>
+      </div>
+      <div class="skill-card reveal">
+        <h3>API / Webhooks</h3>
+        <p data-ru="Интеграция сервисов и обмен данными." data-en="Service integrations and data exchange.">Интеграция сервисов и обмен данными.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="advantages">
+  <div class="container">
+    <h2 class="section-title" data-ru="Почему стоит работать со мной" data-en="Why work with me">Почему стоит работать со мной</h2>
+    <p class="section-desc" data-ru="Внимание к задаче и практичный подход к автоматизации"
+       data-en="A practical approach and attention to your needs">
+      Внимание к задаче и практичный подход к автоматизации
+    </p>
+    <div class="advantages">
+      <div class="advantage reveal">
+        <div class="icon">🎯</div>
+        <h3 data-ru="Индивидуальный подход" data-en="Tailored approach">Индивидуальный подход</h3>
+        <p data-ru="Сначала разбираюсь в задаче и предлагаю решение под конкретные потребности."
+           data-en="I first understand the task and suggest a solution for your specific needs.">
+          Сначала разбираюсь в задаче и предлагаю решение под конкретные потребности.
+        </p>
+      </div>
+      <div class="advantage reveal">
+        <div class="icon">⚡</div>
+        <h3 data-ru="Меньше рутины" data-en="Less repetitive work">Меньше рутины</h3>
+        <p data-ru="Помогаю автоматизировать повторяющиеся процессы и освободить время."
+           data-en="I help automate repetitive processes and free up time.">
+          Помогаю автоматизировать повторяющиеся процессы и освободить время.
+        </p>
+      </div>
+      <div class="advantage reveal">
+        <div class="icon">🔗</div>
+        <h3 data-ru="Интеграция сервисов" data-en="Connected services">Интеграция сервисов</h3>
+        <p data-ru="Настраиваю обмен данными между используемыми платформами."
+           data-en="I configure data exchange between the platforms you use.">
+          Настраиваю обмен данными между используемыми платформами.
+        </p>
+      </div>
+      <div class="advantage reveal">
+        <div class="icon">🧪</div>
+        <h3 data-ru="Тестирование" data-en="Testing">Тестирование</h3>
+        <p data-ru="Проверяю сценарии работы и исправляю обнаруженные ошибки."
+           data-en="I test workflows and fix issues found during testing.">
+          Проверяю сценарии работы и исправляю обнаруженные ошибки.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="container">
+    <h2 class="section-title" data-ru="Как я работаю" data-en="How I work">Как я работаю</h2>
+    <p class="section-desc" data-ru="От обсуждения задачи до готового решения"
+       data-en="From discussing the task to delivering a solution">
+      От обсуждения задачи до готового решения
+    </p>
+    <div class="steps">
+      <div class="step">
+        <h3 data-ru="01. Обсуждение задачи" data-en="01. Understanding the task">01. Обсуждение задачи</h3>
+        <p data-ru="Изучаю потребности бизнеса и определяю, что можно автоматизировать."
+           data-en="I learn about your business needs and identify what can be automated.">
+          Изучаю потребности бизнеса и определяю, что можно автоматизировать.
+        </p>
+      </div>
+      <div class="step">
+        <h3 data-ru="02. Разработка" data-en="02. Development">02. Разработка</h3>
+        <p data-ru="Создаю бота или workflow, настраиваю интеграции и логику."
+           data-en="I build a bot or workflow and configure integrations and logic.">
+          Создаю бота или workflow, настраиваю интеграции и логику.
+        </p>
+      </div>
+      <div class="step">
+        <h3 data-ru="03. Тестирование" data-en="03. Testing">03. Тестирование</h3>
+        <p data-ru="Проверяю работу автоматизации и исправляю обнаруженные ошибки."
+           data-en="I test the automation and fix any issues found.">
+          Проверяю работу автоматизации и исправляю обнаруженные ошибки.
+        </p>
+      </div>
+      <div class="step">
+        <h3 data-ru="04. Передача решения" data-en="04. Delivery">04. Передача решения</h3>
+        <p data-ru="Передаю готовое решение и помогаю разобраться с настройками."
+           data-en="I deliver the solution and help you understand its configuration.">
+          Передаю готовое решение и помогаю разобраться с настройками.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="container">
+    <div class="price-box reveal">
+      <h3 data-ru="Стоимость рассчитывается индивидуально"
+          data-en="Pricing is discussed individually">
+        Стоимость рассчитывается индивидуально
+      </h3>
+      <p data-ru="Опишите вашу задачу — обсудим возможное решение и подберём подходящий вариант для вашего бизнеса."
+         data-en="Tell me about your task. We will discuss a solution and find an approach that fits your business.">
+        Опишите вашу задачу — обсудим возможное решение и подберём подходящий вариант для вашего бизнеса.
+      </p>
+      <a class="btn" href="#contact" data-ru="Обсудить задачу →" data-en="Discuss your task →">Обсудить задачу →</a>
+    </div>
+  </div>
 </section>
 
 <section class="contact" id="contact">
-<div class="container">
-<h2 class="section-title">Есть задача?</h2>
-<p>Давайте обсудим, как автоматизация поможет вашему бизнесу.</p>
-<a class="btn" href="https://t.me/kisamirl">Написать в Telegram →</a>
-</div>
+  <div class="container">
+    <h2 class="section-title" data-ru="Есть задача?" data-en="Have a project?">Есть задача?</h2>
+    <p data-ru="Расскажите, что хотите автоматизировать. Обсудим вашу идею!"
+       data-en="Tell me what you would like to automate. Let's discuss your idea!">
+      Расскажите, что хотите автоматизировать. Обсудим вашу идею!
+    </p>
+    <div class="contact-links">
+      <a class="contact-link" href="https://t.me/kisamirl" target="_blank" rel="noopener noreferrer">✈ Telegram</a>
+      <a class="contact-link" href="mailto:kirsavel877@gmail.com">✉ Email</a>
+      <a class="contact-link" href="https://vk.com/kmironov5" target="_blank" rel="noopener noreferrer">ВКонтакте</a>
+    </div>
+  </div>
 </section>
+
 </main>
 
 <footer>
-© 2026 Automation Developer. Все права защищены.
+  © 2026 AI Automation Developer. <span data-ru="Все права защищены." data-en="All rights reserved.">Все права защищены.</span>
 </footer>
+
+<script>
+const langBtn = document.getElementById("langBtn");
+let currentLang = "ru";
+
+function setLanguage(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-ru][data-en]").forEach(element => {
+    element.textContent = element.getAttribute("data-" + lang);
+  });
+
+  langBtn.textContent = lang === "ru" ? "EN" : "RU";
+  document.title = lang === "ru"
+    ? "AI Automation Developer | n8n & AI"
+    : "AI Automation Developer | n8n & AI";
+}
+
+langBtn.addEventListener("click", () => {
+  setLanguage(currentLang === "ru" ? "en" : "ru");
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(element => {
+  observer.observe(element);
+});
+</script>
+
 </body>
 </html>
